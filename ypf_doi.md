@@ -149,10 +149,3 @@ dataOffsetからの相対
 offsetX.b
 offsetY.b
 ```
-
-offsetからの相対
-```
-x.b
-y.b
-data.w
-```
