@@ -150,3 +150,30 @@ offsetX.b
 offsetY.b
 unknown.w
 ```
+
+# DOI
+Draw Order Information?か何かだと思う
+
+```
+unknown.w //使ってなさそう
+count.w
+for i=0 to count - 1
+  data.b
+```
+
+## データ形式
+dataはframeのindex番目を参照する
+* 6～7ビット目: 体の描画順
+* 4～5ビット目: 頭の描画順
+* 2～3ビット目: 武器の描画順
+* 0～1ビット目: シールドの描画順
+
+```
+body = (data >> 6) & 3
+hair = (data >> 4) & 3
+weapon = (data >> 2) & 3
+shield = (data >> 0) & 3
+```
+
+ここで得られた順番で各要素を描画する。  
+それぞれ2, 3, 0, 1だったら武器、シールド、体、頭の順で描画
