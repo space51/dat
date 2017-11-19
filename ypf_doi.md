@@ -152,7 +152,9 @@ unknown.w
 ```
 
 # DOI
-Draw Order Information?か何かだと思う
+Draw Order Information?か何かだと思う。  
+複数パーツを持つオブジェクトの描画順を定義するもの。  
+今のところHuman系でしか見てない
 
 ```
 unknown.w //使ってなさそう
