@@ -44,11 +44,11 @@ for i=0 to count - 1
   obj[i].isAnim.b
   obj[i].fileIndex.w
   obj[i].frameIndex.w
-  obj[i].x
-  obj[i].y
+  obj[i].x.w
+  obj[i].y.w
 ```
 - isAnim: アニメーションオブジェクトかどうか
-  - true: `"TS_" + fileIndex + "_Static(Shadows)?.ypf"`なypfを描画する
+  - true: `"TS_" + fileIndex + "_AnimStatic(Shadows)?.ypf"`なypfを描画する
   - false: `"TS_" + fileIndex + "_Static(Shadows)?.ypf"`なypfを描画する
 - fileIndex: ypfのファイル名インデックス
 - frameIndex: ypfImage内のframeインデックス
