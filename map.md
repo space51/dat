@@ -69,8 +69,8 @@ StaticObjectInfoの続き
 count1.l
 for i=0 to count1 - 1
   unk.w
-  unk.w
-  unk.w
+  x.w
+  y.w
   unk.w
 ```
 
