@@ -82,8 +82,8 @@ for i=0 to count2 - 1
   unk.w
   unk.w
   unk.l
-  alpha.b
-  blue.b
+  alpha.b //色はどこかで逆になったかも…
+  blue.b
   green.b
   red.b
   unk.w
