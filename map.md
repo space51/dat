@@ -9,10 +9,18 @@ width.b
 height.b
 ```
 
-## フィールド情報
-- 途中に謎のパディング？があり開始アドレスはヘッダから次のバイト数を読み飛ばした先
-  - `((width - 1) / 2 + 1) * ((height - 1) / 4 + 1) * 2`
+## MapAnim
+* ヘッダの直後から
+* 中身はこれから追う
+```
+for y=0 to (height - 1) / 4
+  for x=0 to (width - 1) / 2
+    unk.b
+    unk.b
+```
 
+## MapTile
+* MapAnimの直後から
 ```
 for y=0 to height - 1
   for x=0 to width - 1
@@ -22,6 +30,7 @@ for y=0 to height - 1
     data[x,y].flag.l
 ```
 
+- 
 - flag & 1: 歩行可否
 
 ### 描画
@@ -35,8 +44,8 @@ for y=0 to height - 1
       draw (frame.image, (x * 48) + frame.bounds.x, (y * 32) + frame.bounds.y) // 48,32 はtileの固定サイズ
 ```
 
-## オブジェクト情報
-フィールド情報の直後から
+## StaticObjectInfo
+MapTileの直後から
 
 ```
 count.l
@@ -54,16 +63,31 @@ for i=0 to count - 1
 - frameIndex: ypfImage内のframeインデックス
 - x, y: 描画する位置(絶対座標 in pixel)。ここにframe.boundsがオフセットされる
 
-## その他謎情報
-オブジェクトの続き
+## LightInfo
+StaticObjectInfoの続き
 ```
 count1.l
 for i=0 to count1 - 1
-  unk.8b
+  unk.w
+  unk.w
+  unk.w
+  unk.w
+```
 
+## MultiStateObjectInfo
+LightInfoの続き
+```
 count2.l
 for i=0 to count2 - 1
-  unk.b
+  unk.w
+  unk.w
+  unk.l
+  alpha.b
+  blue.b
+  green.b
+  red.b
+  unk.w
+  unk.w
 ```
 
 ## ポータル
