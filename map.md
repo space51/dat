@@ -30,8 +30,9 @@ for y=0 to height - 1
     data[x,y].flag.l
 ```
 
-- 
+- タイルごとの参照すべきworld*.datの番号。タイルは最大3枚重なる
 - flag & 1: 歩行可否
+- flag & 0x10: SpellVisibility // 調査中
 
 ### 描画
 ピクセルの合成方法はypf内で指定されているもの
