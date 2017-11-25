@@ -38,39 +38,39 @@ for imageCount
       val1.b
       val2.w
       val3.w
-      dataOffset.l
-      length.l
+      depthOffset.l
+      depthSize.l
       
     unk2Length.l
     if unk2Length
       unk2offset.l
       
-  animationCount.w
-  for animationCount
-    //unknown.16b
-    anim1Size.l
-    if anim1Size > 0
-      anim1Offset.l
+  actionCount.w
+  for actionCount
+    actionSize.l
+    if actionSize > 0
+      actionOffset.l
     
-    for 3
-      unk1.b
-      unk2.b
-      unk3.b
-      unk4.b
+    for i=0 to 2
+      time1[i*2].b
+      time1[i*2+1].b
+      time2[i*2].b
+      time2[i*2+1].b
     
-    segmentCount.w
-    for segmentCount
-      segIndex.w
+    actionElemCount.w
+    for actionElemCount
+      frameIndex.w
       time.l
-      length.l
-      if length
-        dataOffset.l
+      actionElemLength.l
+      if actionElemLength
+        actionElemOffset.l
   
   stateCount.w
   for stateCount
     stateSize.l
     if stateSize
       stateOffset.l
+      
     stateElemCount.w
     for stateElemCount
       isStateElemFrame.b
@@ -144,8 +144,9 @@ return data;
 data.w * (ceil(width / depthRes) * ceil(height / depthRes))
 ```
 
-## Animation
-### Segment
+## Action
+アニメーションなど
+### ActionElem
 dataOffsetからの相対
 ```
 offsetX.b
