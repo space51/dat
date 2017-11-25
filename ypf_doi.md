@@ -66,29 +66,31 @@ for imageCount
       if length
         dataOffset.l
   
-  unknownDataCount.w
-  for unknownDataCount
-    val1.l
-    val2.w
-    flag.b
-    val3.b
-    val4.b
-    main.w
-    if flag
-      flagVal.l
+  stateCount.w
+  for stateCount
+    stateSize.l
+    if stateSize
+      stateOffset.l
+    stateElemCount.w
+    for stateElemCount
+      isStateElemFrame.b
+      unk1.b
+      unk2.b
+      unk3.w
+      if isStateElemFrame
+        unk4.w
+      stateElemSize.l
+      if stateElemSize
+        stateElemOffset.l
     
-    unkSize.l
-    if unkSize
-      unkOffset.l
-    
-  unknownData2Count.w
-  for unknownData2Count
-    index.w
-    val2.w
-    val3.w
-    unkSize.l
-    if unkSize
-      unkOffset.l
+  stateTransValueCount.w
+  for stateTransValueCount
+    key1.w
+    key2.w
+    value.w
+    stateTransValueSize.l
+    if stateTransValueSize
+      stateTransValueOffset.l
 ```
 
 ## Base
@@ -149,6 +151,13 @@ dataOffsetからの相対
 offsetX.b
 offsetY.b
 unknown.w
+```
+
+## StateTransValue
+key1, key2はペアでキーとして利用される
+```cpp
+std::hashmap< std::pair<short, short>, StateTransValue> stateTransValues;
+stateTransValues.insert(std::make_pair(key1, key2), stv);
 ```
 
 # DOI
