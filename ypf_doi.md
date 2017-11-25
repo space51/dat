@@ -154,10 +154,16 @@ unknown.w
 ```
 
 ## StateTransValue
-key1, key2はペアでキーとして利用される
+key1, key2はペアでキーとして利用される。  
+ヘッダにはWORDの値１つしかない
 ```cpp
 std::hashmap< std::pair<short, short>, StateTransValue> stateTransValues;
 stateTransValues.insert(std::make_pair(key1, key2), stv);
+```
+```cpp
+class YPFImages::StateTransValue : YPFImages::DataBase {
+  WORD value;
+};
 ```
 
 # DOI
