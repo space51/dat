@@ -35,9 +35,9 @@ for imageCount
       length.l
       
     if flag & 1 // hasDepth
-      depthType.b //0がWORD / depthRes, 1がBYTE / depthRes, 2はstride使って何かしてて3はval3でfill
+      depthType.b //0がWORD / depthRes, 1がBYTE / depthRes, 2はstride使って何かしてて3はnearestDistでfill
       val2.w
-      val3.w //たぶんデフォルト値とか基準値とかそういうの
+      nearestDist.w
       depthOffset.l
       depthSize.l
       
