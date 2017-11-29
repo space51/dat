@@ -78,7 +78,7 @@ for imageCount
       unk2.b
       unk3.w
       if isStateElemFrame
-        unk4.w
+        unk4.w // frameIndex?
       stateElemSize.l
       if stateElemSize
         stateElemOffset.l
